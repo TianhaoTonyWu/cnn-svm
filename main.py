@@ -64,6 +64,13 @@ def parse_args():
         type=float,
         help="percentage of training data used",
     )
+    group.add_argument(
+        "-e",
+        "--training_epoch",
+        required=False,
+        type=int,
+        help="number of epochs of training",
+    )
     arguments = parser.parse_args()
     return arguments
 
