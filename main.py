@@ -58,16 +58,16 @@ def parse_args():
         help="path where to save the TensorBoard logs",
     )
     group.add_argument(
-        "-t",
-        "--training_size",
-        required=False,
+        "-s",
+        "--size_training",
+        required=True,
         type=float,
         help="percentage of training data used",
     )
     group.add_argument(
         "-e",
-        "--training_epoch",
-        required=False,
+        "--epoch",
+        required=True,
         type=int,
         help="number of epochs of training",
     )
@@ -96,7 +96,7 @@ if __name__ == "__main__":
         )
         model.train(
             checkpoint_path=args.checkpoint_path,
-            epochs=10000,
+            epochs=args.epoch,
             log_path=args.log_path,
             train_data=mnist.train,
             test_data=mnist.test,
@@ -111,7 +111,7 @@ if __name__ == "__main__":
         )
         model.train(
             checkpoint_path=args.checkpoint_path,
-            epochs=10000,
+            epochs=args.epoch,
             log_path=args.log_path,
             train_data=mnist.train,
             test_data=mnist.test,
