@@ -98,7 +98,7 @@ if __name__ == "__main__":
             checkpoint_path=args.checkpoint_path,
             epochs=args.epoch,
             log_path=args.log_path,
-            train_data=mnist.train[:int(mnist.train.size*args.size_training)],
+            train_data=mnist.train[:int(mnist.train.labels.shape[0]*args.size_training)],
             test_data=mnist.test,
         )
     elif model_choice == "2":
@@ -113,6 +113,6 @@ if __name__ == "__main__":
             checkpoint_path=args.checkpoint_path,
             epochs=args.epoch,
             log_path=args.log_path,
-            train_data=mnist.train[:int(mnist.train.size*args.size_training)],
+            train_data=mnist.train[:int(mnist.train.labels.shape[0]*args.size_training)],
             test_data=mnist.test,
         )
