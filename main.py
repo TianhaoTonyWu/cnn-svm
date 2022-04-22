@@ -57,6 +57,13 @@ def parse_args():
         type=str,
         help="path where to save the TensorBoard logs",
     )
+    group.add_argument(
+        "-t",
+        "--training_size",
+        required=False,
+        type=float,
+        help="percentage of training data used",
+    )
     arguments = parser.parse_args()
     return arguments
 
