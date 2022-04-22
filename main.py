@@ -40,7 +40,7 @@ def parse_args():
         "-p",
         "--penalty_parameter",
         required=False,
-        type=int,
+        type=float,
         help="the SVM C penalty parameter",
     )
     group.add_argument(
