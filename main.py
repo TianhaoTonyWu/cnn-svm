@@ -60,7 +60,7 @@ def parse_args():
     group.add_argument(
         "-s",
         "--size_training",
-        required=True,
+        required=False,
         type=float,
         help="percentage of training data used",
     )
