@@ -65,7 +65,9 @@ class CNNSVM3:
                 self.conv2d(input_image, first_conv_weight) + first_conv_bias
             )
             first_conv_pool = self.max_pool_2x2(first_conv_activation)
-            print("/n/n/n/n/n/n/n/n/n/n/n/n" + first_conv_pool.shape + "/n/n/n/n/n/n/n/n/n/n/n")
+            print("\n\n\n\n\n\n\n")
+            print(first_conv_pool.shape) 
+            print("\n\n\n\n\n\n\n")
             '''
             # Second convolutional layer
             second_conv_weight = self.weight_variable([5, 5, 32, 64])
