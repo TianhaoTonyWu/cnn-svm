@@ -65,19 +65,7 @@ class CNNSVM3:
                 self.conv2d(input_image, first_conv_weight) + first_conv_bias
             )
             first_conv_pool = self.max_pool_2x2(first_conv_activation)
-            print("\n\n\n\n\n\n\n")
-            print(first_conv_pool.shape) 
-            print("\n\n\n\n\n\n\n")
-            '''
-            # Second convolutional layer
-            second_conv_weight = self.weight_variable([5, 5, 32, 64])
-            second_conv_bias = self.bias_variable([64])
-
-            second_conv_activation = tf.nn.relu(
-                self.conv2d(first_conv_pool, second_conv_weight) + second_conv_bias
-            )
-            second_conv_pool = self.max_pool_2x2(second_conv_activation)
-            '''
+            # shape of this pool is (14, 14, 32)
             # Fully-connected layer (Dense Layer)
             dense_layer_weight = self.weight_variable([14 * 14 * 32, 1024])
             dense_layer_bias = self.bias_variable([1024])
