@@ -56,10 +56,10 @@ class CNNSVM3:
                 )
 
             # First convolutional layer
-            first_conv_weight = self.weight_variable([5, 5, 32, 64])
-            first_conv_bias = self.bias_variable([64])
+            first_conv_weight = self.weight_variable([5, 5, 1, 32])
+            first_conv_bias = self.bias_variable([32])
 
-            input_image = tf.reshape(x_input, [-1, 28, 28, 32])
+            input_image = tf.reshape(x_input, [-1, 28, 28, 1])
 
             first_conv_activation = tf.nn.relu(
                 self.conv2d(input_image, first_conv_weight) + first_conv_bias
@@ -76,10 +76,10 @@ class CNNSVM3:
             second_conv_pool = self.max_pool_2x2(second_conv_activation)
             '''
             # Fully-connected layer (Dense Layer)
-            dense_layer_weight = self.weight_variable([7 * 7 * 64, 1024])
+            dense_layer_weight = self.weight_variable([7 * 7 * 32, 1024])
             dense_layer_bias = self.bias_variable([1024])
 
-            second_conv_pool_flatten = tf.reshape(first_conv_pool, [-1, 7 * 7 * 64])
+            second_conv_pool_flatten = tf.reshape(first_conv_pool, [-1, 7 * 7 * 32])
             dense_layer_activation = tf.nn.relu(
                 tf.matmul(second_conv_pool_flatten, dense_layer_weight)
                 + dense_layer_bias
