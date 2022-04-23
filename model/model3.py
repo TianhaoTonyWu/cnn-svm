@@ -56,10 +56,10 @@ class CNNSVM3:
                 )
 
             # First convolutional layer
-            first_conv_weight = self.weight_variable([5, 5, 1, 32])
-            first_conv_bias = self.bias_variable([32])
+            first_conv_weight = self.weight_variable([5, 5, 32, 64])
+            first_conv_bias = self.bias_variable([64])
 
-            input_image = tf.reshape(x_input, [-1, 28, 28, 1])
+            input_image = tf.reshape(x_input, [-1, 28, 28, 32])
 
             first_conv_activation = tf.nn.relu(
                 self.conv2d(input_image, first_conv_weight) + first_conv_bias
