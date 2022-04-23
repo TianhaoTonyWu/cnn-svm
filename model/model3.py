@@ -79,10 +79,10 @@ class CNNSVM3:
             second_conv_pool = self.max_pool_2x2(second_conv_activation)
             '''
             # Fully-connected layer (Dense Layer)
-            dense_layer_weight = self.weight_variable([7 * 7 * 64, 1024])
+            dense_layer_weight = self.weight_variable([14 * 14 * 32, 1024])
             dense_layer_bias = self.bias_variable([1024])
 
-            second_conv_pool_flatten = tf.reshape(first_conv_pool, [-1, 7 * 7 * 64])
+            second_conv_pool_flatten = tf.reshape(first_conv_pool, [-1, 14 * 14 * 32])
             dense_layer_activation = tf.nn.relu(
                 tf.matmul(second_conv_pool_flatten, dense_layer_weight)
                 + dense_layer_bias
