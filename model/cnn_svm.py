@@ -74,7 +74,9 @@ class CNNSVM:
                 self.conv2d(first_conv_pool, second_conv_weight) + second_conv_bias
             )
             second_conv_pool = self.max_pool_2x2(second_conv_activation)
-
+            print("\n\n\n\n\n\n\n")
+            print(second_conv_pool.shape) 
+            print("\n\n\n\n\n\n\n")
             # Fully-connected layer (Dense Layer)
             dense_layer_weight = self.weight_variable([7 * 7 * 64, 1024])
             dense_layer_bias = self.bias_variable([1024])
