@@ -25,7 +25,7 @@ import time
 import sys
 
 
-class CNNSVM3:
+class CNNSVM4:
     def __init__(self, alpha, batch_size, num_classes, num_features, penalty_parameter):
         """Initializes the CNN-SVM model
 
@@ -37,7 +37,7 @@ class CNNSVM3:
         """
         self.alpha = alpha
         self.batch_size = batch_size
-        self.name = "CNN-SVM3"
+        self.name = "CNN-SVM"
         self.num_classes = num_classes
         self.num_features = num_features
         self.penalty_parameter = penalty_parameter
@@ -55,24 +55,16 @@ class CNNSVM3:
                     dtype=tf.float32, shape=[None, num_classes], name="actual_label"
                 )
 
-            # First convolutional layer
-            first_conv_weight = self.weight_variable([5, 5, 1, 32])
-            first_conv_bias = self.bias_variable([32])
+        
 
-            input_image = tf.reshape(x_input, [-1, 28, 28, 1])
+            input_image = tf.reshape(x_input, [-1, 28 * 28])
 
-            first_conv_activation = tf.nn.relu(
-                self.conv2d(input_image, first_conv_weight) + first_conv_bias
-            )
-            first_conv_pool = self.max_pool_2x2(first_conv_activation)
-            # shape of this pool is (14, 14, 32)
             # Fully-connected layer (Dense Layer)
-            dense_layer_weight = self.weight_variable([14 * 14 * 32, 1024])
+            dense_layer_weight = self.weight_variable([28 * 28, 1024])
             dense_layer_bias = self.bias_variable([1024])
 
-            first_conv_pool_flatten = tf.reshape(first_conv_pool, [-1, 14 * 14 * 32])
             dense_layer_activation = tf.nn.relu(
-                tf.matmul(first_conv_pool_flatten, dense_layer_weight)
+                tf.matmul(input_image, dense_layer_weight)
                 + dense_layer_bias
             )
 
