@@ -57,9 +57,11 @@ python3 main.py --model 2 --dataset ./MNIST_data --penalty_parameter 1 --checkpo
 ```
 ### Added by Tianhao
 There is a new parameter added to adjust the training epoch of the model:
+```
   -e EPOCHS, --epochs EPOCHS
                       integer number of training epochs
-
+```
+For experiments, please run MiniProject4.ipynb
 
 
 ## Results
