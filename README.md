@@ -50,6 +50,10 @@ Arguments:
   -l LOG_PATH, --log_path LOG_PATH
                         path where to save the TensorBoard logs
 ```
+# Added by Tianhao
+There is a new parameter added to adjust the training epoch of the model:
+  -e EPOCHS, --epochs EPOCHS
+                      integer number of training epochs
 
 Then, go to the repository's directory, and run the `main.py` module as per the desired parameters.
 ```bash
