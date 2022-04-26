@@ -61,7 +61,7 @@ There is a new parameter added to adjust the training epoch of the model:
   -e EPOCHS, --epochs EPOCHS
                       integer number of training epochs
 ```
-For experiments, please run MiniProject4.ipynb
+For experiments, please run MP4.ipynb
 
 
 ## Results
