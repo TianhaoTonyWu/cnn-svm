@@ -48,18 +48,19 @@ Arguments:
   -c CHECKPOINT_PATH, --checkpoint_path CHECKPOINT_PATH
                         path where to save the trained model
   -l LOG_PATH, --log_path LOG_PATH
-                        path where to save the TensorBoard logs
+                        path where to save the TensorBoard logs                      
+```
+Then, go to the repository's directory, and run the `main.py` module as per the desired parameters.
+```bash
+cd cnn-svm
+python3 main.py --model 2 --dataset ./MNIST_data --penalty_parameter 1 --checkpoint_path ./checkpoint --log_path ./logs
 ```
 ### Added by Tianhao
 There is a new parameter added to adjust the training epoch of the model:
   -e EPOCHS, --epochs EPOCHS
                       integer number of training epochs
 
-Then, go to the repository's directory, and run the `main.py` module as per the desired parameters.
-```bash
-cd cnn-svm
-python3 main.py --model 2 --dataset ./MNIST_data --penalty_parameter 1 --checkpoint_path ./checkpoint --log_path ./logs
-```
+
 
 ## Results
 
